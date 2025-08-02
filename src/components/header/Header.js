@@ -65,22 +65,38 @@ const Header = () => {
                 {ele.list}
               </NavLink>
             ))}
+<div class="flex items-center gap-5">
+  <a
+    href="/global-hub"
+    class="bg-[#D8EBF7] text-[#0076CE] font-semibold xl-2:text-xl text-base xl:text-lg capitalize py-2 px-4 rounded-md hover:bg-[#c0dff3] transition-all duration-200"
+  >
+    Global Hub
+  </a>
+</div>
+
+<div class="flex items-center gap-5">
+  <a
+    href="/global-hub"
+    class="bg-[#D8EBF7] text-[#0076CE] font-semibold xl-2:text-xl text-base xl:text-lg capitalize py-2 px-4 rounded-md hover:bg-[#c0dff3] transition-all duration-200"
+  >
+    Startup package
+  </a>
+</div>
+
+          <a
+            href="/post-job"
+            class="text-[#7348DE] border border-[#7348DE] px-4 py-2 rounded-[10px] font-semibold xl-2:text-xl text-base xl:text-lg capitalize hover:bg-[#f3eafe] transition-all duration-200"
+          >
+            Post a Job
+          </a>
+
         </div>
 
+
+        
+
         <div className="flex justify-between items-center xl-2:gap-6 gap-3 max-lg:hidden">
-          <div className="flex items-center gap-1 py-3 xl-2:py-3 px-6 rounded-full lg:max-w-[136px] border border-primary search-placeholder">
-            <input
-              type="text"
-              placeholder="Search"
-              className="text-base font-medium  outline-none w-full text-black capitalize font-raleway "
-              style={{ "--placeholder-color": "#757575" }}
-            />
-            <img
-              src="/assets/svg/search/serach.svg"
-              alt=""
-              className="h-4 w-4"
-            />
-          </div>
+
           {!user ? (
             <>
               <NavLink to="auth" className="font-bold text-base font-raleway xl-2:py-4 py-3 xl-2:px-8 px-5 ">

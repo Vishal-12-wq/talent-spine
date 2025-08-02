@@ -1,9 +1,4 @@
-export const navlist =[{
-    list:"home",
-    href:"",
-
-}
-,
+export const navlist =[
 {
     list:"find talent",
     href:"findtalent",
