@@ -121,17 +121,17 @@ const PrequlifiedCarasol = () => {
         <Swiper
           spaceBetween={30}
           className="!pb-20 max-sm:!pb-10 !pt-5 !px-2"
-          slidesPerView={1}
+          slidesPerView={3}
           breakpoints={{
             660: {
-              slidesPerView: 2,
+              slidesPerView: 1,
             },
            
             1024:{
-              slidesPerView:3
+              slidesPerView:2
             },
             1280: {
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
           }}
         
@@ -140,79 +140,117 @@ const PrequlifiedCarasol = () => {
         >
           {data.length > 0 ? (
             data.map((ele) => (
-              <SwiperSlide key={ele.id} className="flex justify-center mx-auto">
-                <div className="max-w-[338.5px]  mx-auto shrink-0 w-full rounded-2xl border shadow-sm border-bordercolor overflow-hidden  hover:shadow-2xl hover:brightness-90">
-                  <div className="sm:h-[200px] h-[250px] xl-2:h-[228px] relative">
-                    <img
-                      src={ele.img}
-                      alt=""
-                      className="h-full w-full object-cover object-center  rounded-2xl"
-                    />
-                    <div
-                      className={`absolute top-3 left-3 px-2 text-[10px] tracking-widest  rounded-[4px]  text-white  py-1 font-roboto font-bold uppercase ${
-                        ele.job_type === "Internship"
-                          ? " bg-[#6B34CB]"
-                          : "" || ele.job_type === "Full Time"
-                          ? " bg-[#004B83]"
-                          : "" || ele.job_type === "Part time"
-                          ? " bg-[#437685]"
-                          : "" || ele.job_type === "Freelancer"
-                          ? " bg-[#B73708]"
-                          : "" 
-                      }`}
-                    >
-                      {ele.job_type}
+              <SwiperSlide key={ele.id} className="flex justify-center mx-auto w-100">
+                <div className="w-full max-w-100 rounded-2xl border border-[#E6ECF0] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden bg-white">
+                  <div className="relative">
+                    
+                    <div className="p-6">
+                      <img
+                        src={ele.img}
+                        alt={ele.name}
+                        className="h-[250px] w-full rounded-[10px] object-cover"
+                      />
+                    </div>
+
+
+                    {/* Verified Badge */}
+                    <div className="absolute top-9 left-8 bg-[#0076CE] text-white text-[11px] px-2 py-1 rounded font-bold font-roboto tracking-wide">
+                      VERIFIED
+                    </div>
+                    {/* Rating */}
+                    <div className="absolute top-9 left-[110px] bg-[#0076CE] text-white text-[11px] px-2 py-1 rounded font-bold font-roboto">
+                      5 ★
+                    </div>
+                    
+                    {/* Bookmark */}
+                    <div className="absolute top-9 right-8">
+                      <img src="/assets/svg/heart/heart.svg" alt="bookmark" className="h-5 w-5" />
                     </div>
                   </div>
-                  <div className="py-3 xl-2:px-5 px-4 xl-2:p-4">
-                    <div className="flex gap-1 items-center justify-between flex-wrap">
-                      <h1 className="xl-2:text-2xl text-lg font-bold font-roboto text-black">
-                        {ele.name}
-                      </h1>
-                      <div className="border border-primary ml-auto text-primary px-2 py-1 rounded-[6px] font-roboto xl-2:text-sm text-xs font-semibold -tracking-tighter">
-                        ${ele.priceper_hour} / HR
+
+                  <div className="p-4 space-y-3">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="text-lg font-bold text-black font-roboto">{ele.name}</h3>
+                          <div className="text-sm text-gray-700">{ele.post}</div> {/* Post below name */}
+                        </div>
+
+                        <div className="text-right">
+                          <div className="text-[#0076CE] text-sm font-semibold border border-[#0076CE] px-2 py-1 rounded">
+                            ${ele.priceper_hour}/HR or {ele.priceper_month}/PM
+                          </div>
+                          <div className="text-sm text-[#FFB800] text-center uppercase mt-1">Premium</div> {/* Moved Premium here */}
+                        </div>
+                      </div>
+
+                      <div className="flex items-center text-sm text-gray-600 gap-2">
+                        <img src="/assets/svg/location/Vector (1).svg" alt="location" className="w-4 h-4" />
+                        {ele.adress}
+                      </div>
+                    
+
+
+                    <div className="grid grid-cols-2 gap-2 mt-2 text-xs font-semibold font-roboto">
+                      <div className="text-black rounded px-2 py-1 border border-l-black border-t-gray-300 border-r-gray-300 border-b-gray-300">
+                        $70+ Earned
+                      </div>
+
+                      <div className="text-black rounded px-2 py-1 border border-l-black border-t-gray-300 border-r-gray-300 border-b-gray-300">
+                        7+ Years of Experience
+                      </div>
+
+                      <div className="text-[#228822] rounded px-2 py-1 border border-l-[#228822] border-t-gray-300 border-r-gray-300 border-b-gray-300">
+                        Available Now
+                      </div>
+
+                      <div className="text-[#7348DE] rounded px-2 py-1 border border-l-[#7348DE] border-t-gray-300 border-r-gray-300 border-b-gray-300">
+                        Offer Free Consultations
                       </div>
                     </div>
-                    <h2 className="mt-2 text-secondarys1 xl-2:text-base text-sm font-roboto">
-                      {ele.post}
-                    </h2>
-                    <ul className="mt-5 font-roboto">
-                      <li className="flex items-center">
-                        <img
-                          src="/assets/svg/location/Vector (1).svg"
-                          alt=""
-                          className="h-[14.3px] w-[10px]"
-                        />
-                        <span className="ml-2 text-black text-sm  font-roboto">
-                          {ele.adress}
+
+                    <p className="text-xs text-[#0076CE] leading-5 mt-3">
+                      I share close to 4 decades of experience between us in Analytics, Product, Consulting and Strategy.
+                    </p>
+                    
+                    <div className="mt-4">
+                      <span className="block text-[11px] text-[#4B4B4B] font-semibold tracking-wide mb-2">
+                        Main Skills
+                      </span>
+
+                      {/* Skills */}
+                      <div className="flex flex-wrap gap-2 text-xs">
+                        <span className="text-[#0076CE] px-3 py-[6px] rounded-full shadow-md">
+                          Analytics
                         </span>
-                      </li>
-                      <li className="flex items-center mt-1">
-                        <img
-                          src="/assets/svg/location/Vector (2).svg"
-                          alt=""
-                          className="h-[15.35px] w-2"
-                        />
-                        <span className="ml-2 text-black text-sm ">
-                          {ele.priceper_hour}/HR or {ele.priceper_month}/PM
+                        <span className="text-[#0076CE] px-3 py-[6px] rounded-full shadow-md">
+                          Consulting
                         </span>
-                      </li>
-                    </ul>
-                    <div className="mt-5 flex items-center gap-2">
-                      <button className="border-2 shrink-0 border-primary rounded-md h-10 w-10 flex items-center justify-center">
-                        <img
-                          src="/assets/svg/heart/heart.svg"
-                          alt=""
-                          className="w-5 h-4"
-                        />
+                        <span className="text-[#0076CE] px-3 py-[6px] rounded-full shadow-md">
+                          Bidding
+                        </span>
+                        <span className="text-[#0076CE] px-3 py-[6px] rounded-full shadow-md">
+                          Development
+                        </span>
+                        <span className="text-[#0076CE] px-3 py-[6px] rounded-full shadow-md">
+                          +5
+                        </span>
+                      </div>
+                    </div>
+
+
+                    {/* Action Buttons */}
+                    <div className="flex items-center gap-2 mt-4">
+                      <button className="bg-[#0076CE] hover:bg-[#0061a8] text-white px-4 py-2 text-sm rounded-md w-1/2 font-semibold">
+                        View Profile
                       </button>
-                      <button className="bg-primary uppercase tracking-wider w-full py-[12.5px] rounded-lg text-white text-xs xl-2:text-sm font-semibold font-roboto">
-                        Invite to job
+                      <button className="border border-[#0076CE] text-[#0076CE] px-4 py-2 text-sm rounded-md w-1/2 font-semibold hover:bg-[#F0F9FF]">
+                        Message
                       </button>
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
+
             ))
           ) : (
             <p className="py-10 text-xl text-red-600 font-semibold text-center">
