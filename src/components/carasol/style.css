@@ -1,0 +1,16 @@
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    filter: blur(2);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0); /* End at the original position */
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.9s ease-in-out; /* Adjust duration and easing */
+}

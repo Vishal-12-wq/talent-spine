@@ -1,0 +1,239 @@
+import React, { useState } from "react";
+import Categories from "../categories/Categories";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation, A11y } from "swiper/modules";
+
+const data = [
+  {
+    id: 1,
+    name: "Startup",
+    post: "What can a Business Coach Help With?",
+    adress: "2 Day Delivery",
+    priceper_hour: "40",
+    review: "4.8(782)",
+    priceper_month: "1200",
+    reviwemen:
+      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+    img: "/assets/images/trending/trending1.png",
+    reviewer: "James",
+    review_text: "top rated",
+  },
+  {
+    id: 2,
+    name: "Tips",
+    post: "Build the right team working the right way",
+    adress: "2 Day Delivery",
+    priceper_hour: "60",
+    priceper_month: "1200",
+    review: "4.8(782)",
+    reviwemen:
+      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+    img: "/assets/images/trending/trenidng2.png",
+    reviewer: "James",
+    review_text: "top rated",
+  },
+  {
+    id: 3,
+    name: "Coaching",
+    post: "Is A Small Business Coach Different?",
+    adress: "2 Day Delivery",
+    priceper_hour: "60",
+    priceper_month: "1200",
+    reviwemen:
+      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+    img: "/assets/images/trending/trenidng3.png",
+    reviewer: "James",
+    review_text: "top rated",
+  },
+  {
+    id: 4,
+    name: "Tips",
+    post: "Build the right team working the right way",
+    adress: "2 Day Delivery",
+    priceper_hour: "60",
+    priceper_month: "1200",
+    reviwemen:
+      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+    img: "/assets/images/trending/trending4.png",
+    reviewer: "James",
+    review_text: "top rated",
+  },
+  {
+    id: 5,
+    name: "Tips",
+    post: "Build the right team working the right way",
+    adress: "2 Day Delivery",
+    priceper_hour: "60",
+    priceper_month: "1200",
+    reviwemen:
+      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+    img: "/assets/images/trending/trending4.png",
+    reviewer: "James",
+    review_text: "top rated",
+  },
+  {
+    id: 6,
+    name: "Tips",
+    post: "Build the right team working the right way",
+    adress: "2 Day Delivery",
+    priceper_hour: "60",
+    priceper_month: "1200",
+    reviwemen:
+      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+    img: "/assets/images/trending/trending4.png",
+    reviewer: "James",
+    review_text: "top rated",
+  },
+];
+
+const TrendingPackage = () => {
+  const categories = [
+    "All Programme",
+    "UI/UX Design",
+    "Program Design",
+    "Web Development",
+    "Data Science",
+  ];
+
+  const [swiperRef, setSwiperRef] = useState(null);
+
+  return (
+    <div className="max-w-[1500px] relative xl-2:max-w-[1600px] mx-auto mt-28  xl-2:mt-[96px] xl:px-20 xl-2:px-0 lg:px-10 px-3 max-sm:pt-10">
+      <h1 className="section-title max-w-[489px] mx-auto flex flex-wrap gap-4 justify-center">
+        Trending
+        <div>
+          <span className="text-primary"> Packages</span>
+          <img
+            src="/assets/svg/curve/text-curve.svg"
+            alt=""
+            className="ml-auto mt-1 max-w-[220px] w-full"
+          />
+        </div>
+      </h1>
+
+      <div className="mt-7 xl-2:mt-12 md:px-20 px-3">
+        <Categories categories={categories} />
+      </div>
+
+      <div className="xl-2:mt-12 mt-8 w-full flex justify-center  mx-auto sm:gap-5 gap-2 xl-2:gap-[30px] items-center relative">
+
+        <button
+          onClick={() => swiperRef?.slidePrev()}
+          className="sm:h-10 sm:w-10 h-8 w-8  border border-primary shrink-0 rounded-full flex justify-center items-center"
+        >
+          <img src="/assets/svg/carasol/left.svg" alt="" className="h-4 w-4" />
+        </button>
+
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            660: {
+              slidesPerView: 2,
+            },
+           
+            1024:{
+              slidesPerView:3
+            },
+            1280: {
+              slidesPerView: 4,
+            },
+          }}
+          onSwiper={setSwiperRef}
+          modules={[Pagination, Navigation, A11y]}
+           className="!pb-14 max-sm:!pb-10 !pt-5 !px-2"
+        >
+          {data.length > 0 ? (
+            data.map((ele) => (
+              <SwiperSlide key={ele.id} className="flex justify-center mx-auto">
+                <div className="mx-auto xl:px-5 px-3 py-3 max-w-[338.8px] shrink-0 w-full rounded-2xl border-t-2 hover:border-t-primary border shadow-sm border-bordercolor overflow-hidden  hover:shadow-xl hover:brightness-90">
+                  <div className="h-[200px] relative">
+                    <img
+                      src={ele.img}
+                      alt={ele.name}
+                      className="h-full w-full object-top object-cover rounded-2xl"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex gap-1 items-center justify-between mt-3">
+                      <h1 className="text-base xl-2:text-lg font-roboto font-bold text-primary uppercase tracking-wider">
+                        {ele.name}
+                      </h1>
+                      <div className="border border-primary text-primary px-2 py-1 rounded-[6px] text-sm font-semibold">
+                        ${ele.priceper_hour}
+                      </div>
+                    </div>
+                    <h2 className=" text-black font-bold text-xl xl-2:text-2xl leading-6 capitalize mt-4">
+                    {ele.post.length > 20 ? ele.post.slice(0, 20) + "..." : ele.post}
+                    </h2>
+                    <ul className="mt-4">
+                      <li className="flex items-center">
+                        <img
+                          src="/assets/svg/trending/treindingtime.svg"
+                          alt=""
+                          className="h-3 w-3"
+                        />
+                        <span className="ml-2 text-black text-xs font-roboto">{ele.adress}</span>
+                      </li>
+                      <li className="flex items-center mt-1">
+                        <img
+                          src="/assets/svg/trending/star.svg"
+                          alt=""
+                          className="h-3 w-3"
+                        />
+                        <span className="ml-2 text-black text-xs font-roboto">
+                          {ele.priceper_hour}/HR or {ele.priceper_month}/PM
+                        </span>
+                      </li>
+                    </ul>
+                    <div className="mt-4 flex items-center gap-3 flex-wrap justify-between ">
+                      <div className="flex-1 flex items-center gap-2">
+                        <img
+                          src={ele.reviwemen}
+                          alt=""
+                          className="h-8 w-8 xl-2:h-10 xl-2:w-10 rounded-full object-cover object-top"
+                        />
+                        <div>
+                          <h3 className="text-xs text-black xl-2:text-sm font-medium">{ele.reviewer}</h3>
+                          <h3 className="text-[10px] text-secondarys1 capitalize  xl-2:text-xs">
+                            {ele.review_text}
+                          </h3>
+                        </div>
+                      </div>
+                      <button className="bg-primary uppercase flex-1  py-3 rounded-lg text-white lg:text-[10px] text-[10px] font-semibold">
+                        View All Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))
+          ) : (
+            <p className="py-10 text-xl text-red-600 font-semibold text-center">
+              Data not Available
+            </p>
+          )}
+        </Swiper>
+
+        <button
+          onClick={() => swiperRef?.slideNext()}
+          disabled={swiperRef?.realIndex + 1 >= data.length}
+          className="sm:h-10 sm:w-10 h-8 w-8  border border-primary rounded-full  shrink-0 flex justify-center items-center disabled:opacity-50"
+        >
+          <img src="/assets/svg/carasol/right.svg" alt="" className="h-4 w-4" />
+        </button>
+      </div>
+
+      <img
+        src="/assets/svg/work/arrow.svg"
+        alt=""
+        className="absolute left-14 w-[150px] h-16 top-1 hidden lg:block"
+      />
+    </div>
+  );
+};
+
+export default TrendingPackage;

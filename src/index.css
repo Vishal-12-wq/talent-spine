@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Days+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* sidebar start */
+.pathmover-logo{
+  @apply  xl-2:h-12  xl-2:w-[166px] h-10 w-44 mb-3 xl-2:mb-7 mx-auto
+}
+.fs18{
+  @apply font-inter text-sm font-medium xl-2:text-base
+}
+.fs12-gray{
+  @apply block text-xs text-secondarys1 font-inter
+}
+
+.sidebar-profile-pic{
+  @apply h-20 w-20 rounded-full xl-2:h-[150px] xl-2:w-[150px] object-cover object-top mx-auto relative
+}
+.sidebar-list{
+  @apply text-sm font-inter font-medium xl-2:text-base
+}
+.custom-button{
+  @apply py-3 xl:px-8 px-4 shadow-xl font-bold font-inter xl:text-sm text-xs rounded-2xl p-2 xl-2:py-4  xl-2:text-base
+}
+/* sidebar end */
+.remove-scrollbar::-webkit-scrollbar{
+  display: none;
+}
+
+.search-placeholder input::placeholder {
+  color: #757575;
+}
+
+@media only screen and (min-width: 1700px) {}
+
+.custom-radius {
+  border-radius: 10% 25% 0% 15% !important;
+}
+
+
+/* .prequlifeid-swiper .swiper-button-prev:after, .swiper-button-next:after{
+  font-size: 15px !important;
+} */
+/* .prequlifeid-swiper .swiper-button-next,.swiper-button-prev{
+  @apply !h-10 !w-10 rounded-full border border-primary 
+} */
+/* .swiper-button-prev, .swiper-button-next{
+  position: relative !important;
+  flex-shrink: 0 !important;
+} */
+/* .prequlifeid-swiper{
+  @apply  !flex !justify-start !items-center
+} */
+.section-title {
+  @apply text-center xl-2:text-[48px] text-[32px] max-sm:text-3xl font-raleway font-bold;
+}
+
+.bg-custom {
+  background-image: url("/public/assets/images/shapebg/shapebg.png");
+  background-size: 100% 100%;
+}
+
+.home-hero-carasol .swiper-pagination {}
+
+.rating-slider .swiper-pagination {
+  position: relative !important;
+  top: 60px !important;
+}
+
+.rating-slider .swiper-pagination-bullet-active {
+  background-color: black !important;
+  width: 30px !important;
+  border-radius: 10px !important;
+}
+
+.swiper-nav-btns button {
+  width: 60px;
+  position: relative !important;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background-color: hsl(210, 100%, 50%);
+  color: #fff;
+  margin: 0px 0.5rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  margin-top: 30px;
+  transition: all 0.5s;
+}
+
+.file-ulpoad-lablel {
+  display: inline-block;
+
+  cursor: pointer;
+}
+
+.form-basic-need {
+  @apply border-success bg-white border-t-8 rounded-[30px] p-5  xl-2:p-8 shadow-xl;
+}
+
+.form-heading {
+  @apply text-xl font-bold font-inter;
+}
+
+.black-placeholder input::placeholder {
+  color: black !important;
+}
+
+.div-border-b {
+  @apply pb-6 border-b border-bordercolor;
+}
+
+.input-field {
+  @apply text-sm flex-1 p-2 border font-inter rounded-lg mt-1 border-bordercolor outline-none;
+}
+
+.form-small {
+  @apply leading-4 mt-1 text-xs text-secondarys1 font-inter;
+}
+
+/* .toggle-responsive{
+  @apply absolute top-5 right-0
+} */
+
+.swiper-container {
+  margin-top: 50px;
+  position: relative;
+}
+
+.card-zoom {
+  @apply transform hover:scale-105 transition-transform duration-300;
+}
+
+.arrow-left {
+  position: absolute !important;
+  top: 50% !important;
+  left: 0;
+}
+
+.arrow-right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.profile-aligment {
+  @apply lg:px-14 sm:px-8 px-5;
+}
+
+.hexa-bg {
+  background-image: url("/public/assets/images/profile/Polygon\ 1.png");
+  background-size: 100% 100%;
+  height: 80px;
+  width: 80px;
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* custom checkbox */
+
+@media only screen and (min-width: 1024px) {
+  /* .create-bg{
+    background-image: url("/public/assets/images/hero/Map.png");
+    object-position: top left;
+    background-size:  100% 100%;
+    background-repeat: no-repeat;
+  } */
+}
+
+.triangle-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+  transition: transform 1s ease-in-out;
+}
+
+.triangle-container.rotated-0 {
+  transform: rotate(0deg);
+}
+
+.triangle-container.rotated-1 {
+  transform: rotate(90deg);
+}
+
+.triangle-container.rotated-2 {
+  transform: rotate(180deg);
+}
+
+.triangle-container.rotated-3 {
+  transform: rotate(270deg);
+}
+
+.triangle-block {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(to top, #1257a5, #4b87cb);
+  border-radius: 15px;
+  position: absolute;
+  transition: transform 1s ease;
+}
+
+.triangle-container .block1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.triangle-container .block2 {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.triangle-container .block3 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.image-change {
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.image-change{
+  @apply max-xl-25:relative max-lg:top-0 max-lg:transform max-xl-25:translate-x-[-50%]  max-xl-25:translate-y-[15%]
+}
+
+.image-change {
+  opacity: 1 !important;
+}
+
+.custom-scrollbar {
+  @apply [&::-webkit-scrollbar]:w-2 !block [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-black dark:[&::-webkit-scrollbar-thumb]:bg-success;
+}
+
+.radialbg {
+  background: radial-gradient(circle, rgba(32, 211, 225, 1) 0%, rgba(117, 43, 226, 1) 63%);
+}
+@keyframes fadeInContainer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInKey {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInContainer 1s ease-out forwards; 
+}
+
+.fade-in-key {
+  animation: fadeInKey 1s ease-out forwards;
+}
+.blog-swiper .swiper-pagination{
+  @apply relative pt-5
+}
+/* .blog-swiper .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  @apply 
+} */
+.gradient-text{
+  background-image: linear-gradient(rgb(4, 255, 0), rgb(14, 14, 79));
+  color: transparent;
+  background-clip: text;
+}
+
+/*  react date pickker tsratt */
+/* Add this to your CSS file (e.g., App.css) */
+.calendar-container {
+  width: 100%;
+  padding: 14px;
+  position: relative;
+   border-radius: 12px;
+  background-color: #fff;
+  @apply border-primary border
+}
+.react-calendar__navigation__prev-button{
+  @apply absolute top-4 right-[70px] text-xl text-white !bg-primary rounded-full flex justify-center items-center !h-7
+}
+.react-calendar__navigation__next-button{
+  @apply absolute top-4 right-6 text-xl text-white !bg-primary rounded-full flex justify-center items-center !h-7
+
+}
+.react-calendar__navigation button{
+  min-width: 28px !important;
+}
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.react-calendar{
+  @apply !w-full !border-0
+}
+
+.month-selector, .year-selector {
+  padding: 5px;
+  font-size: 14px;
+}
+.abbr:where([title]){
+  @apply !border-0  !no-underline
+}
+.react-calendar__month-view__weekdays__weekday:nth-child(6) {
+  @apply text-primary  border-none !no-underline
+
+}
+.react-calendar__tile{
+  @apply !p-[6px]
+}
+.react-calendar__navigation__next2-button,.react-calendar__navigation__prev2-button{
+  @apply !hidden
+}
+
+/* Change the color for Saturday (seventh day in the header) */
+.react-calendar__month-view__weekdays__weekday:nth-child(7) {
+  @apply text-primary 
+}
+.react-calendar__tile--active{
+  @apply !rounded-full h-[60px] max-sm:h-12
+}
+.react-calendar__tile--now{
+  @apply !rounded-full h-[60px] max-sm:h-12
+}
+.react-calendar__month-view__days__day--weekend{
+  @apply !text-secondary
+}
+.calendar-header{
+  @apply !justify-start
+}
+.calendar-header select {
+  -webkit-appearance: none; 
+  -moz-appearance: none;    
+  appearance: none;        
+  background: none;     
+  outline: none;    
+  border: none;         
+}
+.month-selector, .year-selector{
+  @apply font-bold
+}
+.react-calendar__navigation__label{
+  display:  none !important;
+}
+/*  reeact date picker end
+ */
+
+ /*  for 1920 screen media queries start  */
+ @media only screen and (min-width: 1710px){
+  
+ }
+
+
+ /* for 1920 screen media queriees end */

@@ -1,0 +1,129 @@
+@import 'node_modules/swiper/swiper';
+@import 'node_modules/swiper/components/effect-fade/effect-fade';
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.user-model {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.user-model img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transition: filter 0.5s ease;
+}
+
+.user-model img.blur {
+  filter: blur(5px);
+}
+
+.box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: all 0.8s ease;
+  z-index: -9;
+}
+
+.swap-button {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.animated-boxes-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.user-model {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.model-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #007bff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.animated-boxes-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.user-model {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #007bff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.blue-box {
+  background-color: rgba(0, 0, 255, 0.7);
+  filter: blur(5px);
+}
+
+
+.user-model img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.small-card {
+  z-index: 50;
+  transition: all 0.8s ease;
+}
