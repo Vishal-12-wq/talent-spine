@@ -10,12 +10,15 @@ import Rating from "../../components/home/rating/Rating";
 import LatestBlog from "../../components/carasol/LatestBlog";
 import DateSelect from "../../components/home/dateselect/DateSelect";
 import Course from "../../components/course/Course";
+// *****************New add************************
+import TalentUniversityBanner from "../../components/talentuniversitybanner/TalentUniversityBanner";
 
 const Home = () => {
   return (
     <div className=" ">
       <CarasolHero />
       <Course/>
+      <TalentUniversityBanner/>
       <PrequlifiedCarasol />
       <HowWork />
       <PricePackage />

@@ -230,7 +230,7 @@ const CarasolHero = () => {
         <div className=" w-full xl-25:max-w-[986px] xl-25:w-[60%]   h-full max-xl-2:h-[500px] flex lg:justify-center  justify-center flex-col max-lg:mt-12 items-center lg:h-full relative">
           <Swiper
             autoplay={{
-              delay: 5000,
+              delay: 8000,
               disableOnInteraction: false,
               waitForTransition: true
             }}
