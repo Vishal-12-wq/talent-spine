@@ -12,11 +12,11 @@ const data = [
     name: "Startup",
     post: "What can a Business Coach Help With?",
     adress: "2 Day Delivery",
-    priceper_hour: "40",
+    priceper_hour: "From $40",
     review: "4.8(782)",
-    priceper_month: "1200",
+    priceper_month: "782",
     reviwemen:
-      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+      "https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
     img: "/assets/images/trending/trending1.png",
     reviewer: "James",
     review_text: "top rated",
@@ -26,11 +26,11 @@ const data = [
     name: "Tips",
     post: "Build the right team working the right way",
     adress: "2 Day Delivery",
-    priceper_hour: "60",
-    priceper_month: "1200",
+    priceper_hour: "From $40",
+    priceper_month: "782",
     review: "4.8(782)",
     reviwemen:
-      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+      "https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
     img: "/assets/images/trending/trenidng2.png",
     reviewer: "James",
     review_text: "top rated",
@@ -40,10 +40,10 @@ const data = [
     name: "Coaching",
     post: "Is A Small Business Coach Different?",
     adress: "2 Day Delivery",
-    priceper_hour: "60",
-    priceper_month: "1200",
+    priceper_hour: "From $40",
+    priceper_month: "782",
     reviwemen:
-      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+      "https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
     img: "/assets/images/trending/trenidng3.png",
     reviewer: "James",
     review_text: "top rated",
@@ -53,10 +53,10 @@ const data = [
     name: "Tips",
     post: "Build the right team working the right way",
     adress: "2 Day Delivery",
-    priceper_hour: "60",
-    priceper_month: "1200",
+    priceper_hour: "From $40",
+    priceper_month: "782",
     reviwemen:
-      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+      "https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
     img: "/assets/images/trending/trending4.png",
     reviewer: "James",
     review_text: "top rated",
@@ -66,10 +66,10 @@ const data = [
     name: "Tips",
     post: "Build the right team working the right way",
     adress: "2 Day Delivery",
-    priceper_hour: "60",
-    priceper_month: "1200",
+    priceper_hour: "From $40",
+    priceper_month: "782",
     reviwemen:
-      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+      "https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
     img: "/assets/images/trending/trending4.png",
     reviewer: "James",
     review_text: "top rated",
@@ -79,10 +79,10 @@ const data = [
     name: "Tips",
     post: "Build the right team working the right way",
     adress: "2 Day Delivery",
-    priceper_hour: "60",
-    priceper_month: "1200",
+    priceper_hour: "From $40",
+    priceper_month: "782",
     reviwemen:
-      "https://photoai.com/cdn-cgi/image/format=jpeg,fit=cover,width=1024,height=1536,quality=85/https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
+      "https://r2-us-west.photoai.com/1726204507-41c93c794ee27f57a83004455c8b6482-3.png",
     img: "/assets/images/trending/trending4.png",
     reviewer: "James",
     review_text: "top rated",
@@ -150,20 +150,30 @@ const TrendingPackage = () => {
             data.map((ele) => (
               <SwiperSlide key={ele.id} className="flex justify-center mx-auto">
                 <div className="mx-auto xl:px-5 px-3 py-3 max-w-[338.8px] shrink-0 w-full rounded-2xl border-t-2 hover:border-t-primary border shadow-sm border-bordercolor overflow-hidden  hover:shadow-xl hover:brightness-90">
-                  <div className="h-[200px] relative">
-                    <img
-                      src={ele.img}
-                      alt={ele.name}
-                      className="h-full w-full object-top object-cover rounded-2xl"
-                    />
+                  
+                  <div className="relative">
+                    
+                    <div className="p-0">
+                      <img
+                        src={ele.img}
+                        alt={ele.name}
+                        className="h-full w-full object-top object-cover rounded-2xl"
+                      />
+                    </div>
+  
+                    {/* Bookmark */}
+                    <div className="absolute top-3 right-3 border border-[#0076CE] bg-white p-1 rounded-[100px]">
+                      <img src="/assets/svg/heart/heart.svg" alt="bookmark" className="h-5 w-5" />
+                    </div>
                   </div>
+
                   <div>
                     <div className="flex gap-1 items-center justify-between mt-3">
                       <h1 className="text-base xl-2:text-lg font-roboto font-bold text-primary uppercase tracking-wider">
                         {ele.name}
                       </h1>
                       <div className="border border-primary text-primary px-2 py-1 rounded-[6px] text-sm font-semibold">
-                        ${ele.priceper_hour}
+                        {ele.priceper_hour}
                       </div>
                     </div>
                     <h2 className=" text-black font-bold text-xl xl-2:text-2xl leading-6 capitalize mt-4">
@@ -185,7 +195,7 @@ const TrendingPackage = () => {
                           className="h-3 w-3"
                         />
                         <span className="ml-2 text-black text-xs font-roboto">
-                          {ele.priceper_hour}/HR or {ele.priceper_month}/PM
+                          {ele.priceper_hour} ({ele.priceper_month})
                         </span>
                       </li>
                     </ul>
@@ -203,11 +213,15 @@ const TrendingPackage = () => {
                           </h3>
                         </div>
                       </div>
-                      <button className="bg-primary uppercase flex-1  py-3 rounded-lg text-white lg:text-[10px] text-[10px] font-semibold">
-                        View All Details
+                      <button className="uppercase flex-1 border border-[#0076CE] text-[#0076CE] py-3 rounded-lg lg:text-[10px] text-[10px] font-semibold">
+                        Message
                       </button>
                     </div>
+
                   </div>
+                    <div className="font-medium text-[10px] mt-2 text-[#7348DE] rounded px-2 py-1 border border-l-[#7348DE] border-t-gray-300 border-r-gray-300 border-b-gray-300">
+                      Book a Custom Consultations
+                    </div>
                 </div>
               </SwiperSlide>
             ))

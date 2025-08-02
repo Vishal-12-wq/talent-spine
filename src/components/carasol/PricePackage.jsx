@@ -64,6 +64,17 @@ const data = [
   },
 ];
 
+const chunkArray = (arr, size) => {
+  const chunks = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+  return chunks;
+};
+
+const slides = chunkArray(data, 4); // each slide gets 4 cards
+
+
 const PricePackage = () => {
   const categories = [
     "All",
@@ -104,61 +115,53 @@ const PricePackage = () => {
           <img src="/assets/svg/carasol/left.svg" alt="" className="h-4 w-4" />
         </button>
 
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={1}
-          breakpoints={{
-            660: {
-              slidesPerView: 2,
-            },
-           
-            1024:{
-              slidesPerView:3
-            },
-            1280: {
-              slidesPerView: 4,
-            },
-          }}
-          onSwiper={setSwiperRef}
-          modules={[Pagination, Navigation, A11y]}
-          className="!pb-14 max-sm:!pb-10 !pt-5 !px-2"
-        >
-          {data.length > 0 ? (
-            data.map((ele) => (
-              <SwiperSlide key={ele.id} className="flex justify-center mx-auto">
-                <div className="mx-auto xl:px-5 px-3 py-3 max-w-[337.8px] shrink-0 w-full rounded-2xl border shadow-sm border-bordercolor border-t-2 overflow-hidden hover:border-t-primary  hover:shadow-xl hover:brightness-90">
-                  <div className="h-[200px] relative">
-                    <img
-                      src={ele.img}
-                      alt=""
-                      className="h-full w-full object-cover object-top rounded-2xl"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <div className="">
-                      <h1 className="xl-2:text-base text-sm font-bold font-roboto text-primary">
-                        {ele.name}
-                      </h1>
-                    </div>
-                    <h2 className="mt-1 text-[#757575] xl-2:text-xs text-xs font-light font-roboto">
-                      {ele.post}
-                    </h2>
+<Swiper
+  spaceBetween={20}
+  slidesPerView={1}
+  onSwiper={setSwiperRef}
+  modules={[Pagination, Navigation, A11y]}
+  className="!pb-14 !pt-5 !px-2"
+>
+  {slides.length > 0 ? (
+    slides.map((group, index) => (
+      <SwiperSlide key={index}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 place-items-center">
+          {group.map((ele) => (
+            <div
+              key={ele.id}
+              className="flex gap-4 w-full max-w-[600px] p-4 border shadow-sm border-bordercolor border-t-2 rounded-2xl hover:border-t-primary hover:shadow-lg transition-all"
+            >
+              {/* Image Left */}
+              <div className="w-[40%] min-w-[120px] max-w-[200px] h-[130px] overflow-hidden rounded-[10px]">
+                <img
+                  src={ele.img}
+                  alt={ele.name}
+                  className="w-full h-full object-cover rounded-[10px]"
+                />
+              </div>
 
-                    <div className="mt-5 ">
-                      <button className="bg-primary w-full p-3 rounded-lg text-white text-xs xl-2:text-sm font-semibold font-roboto">
-                        View All
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))
-          ) : (
-            <p className="py-10 text-xl text-red-600 font-semibold text-center">
-              Data not Available
-            </p>
-          )}
-        </Swiper>
+              {/* Content Right */}
+              <div className="flex flex-col justify-between w-[60%]">
+                <h2 className="text-primary font-bold text-sm xl:text-base">{ele.name}</h2>
+                <p className="text-xs xl:text-sm text-[#757575] mt-1 line-clamp-3">
+                  {ele.post}
+                </p>
+                <button className="mt-3 bg-primary w-100 px-4 py-2 rounded text-white text-xs xl:text-sm font-semibold">
+                  View All
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </SwiperSlide>
+    ))
+  ) : (
+    <p className="py-10 text-xl text-red-600 font-semibold text-center">
+      Data not Available
+    </p>
+  )}
+</Swiper>
+
 
         <button
           onClick={() => swiperRef?.slideNext()}

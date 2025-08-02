@@ -4,6 +4,8 @@ import PrequlifiedCarasol from "../../components/carasol/PrequlifiedCarasol";
 import HowWork from "../../components/home/howwrok/HowWork";
 import PricePackage from "../../components/carasol/PricePackage";
 import TrendingPackage from "../../components/carasol/TrendingPackage";
+import StartupPackage from "../../components/carasol/StartupPackage";
+
 import DigitalSkill from "../../components/home/digitalSkills/DigitalSkill";
 import Keys from "../../components/home/keys/Keys";
 import Rating from "../../components/home/rating/Rating";
@@ -23,6 +25,7 @@ const Home = () => {
       <HowWork />
       <PricePackage />
       <TrendingPackage/>
+      <StartupPackage/>
       <DigitalSkill/>
       <Keys/>
       <Rating/>

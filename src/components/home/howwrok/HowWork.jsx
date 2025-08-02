@@ -26,6 +26,18 @@ const HowWork = () => {
         >
           Domain Expertise
         </button>
+
+        <button
+          className={`${
+            activeSection === "domain-expertise"
+              ? "bg-primary text-white"
+              : "bg-transparent text-black border border-black"
+          } shadow-lg px-4 py-3 xl-2:py-4 xl-2:px-6 xl-2:text-base text-sm font-roboto rounded-2xl font-bold`}
+          onClick={() => setActiveSection("domain-expertise")} // Show "Domain Expertise"
+        >
+          Work From Global Hub
+        </button>
+
       </div>
 
       <div className="mt-10 flex justify-center items-center lg:gap-8 sm:gap-6 gap-3 mx-auto">
