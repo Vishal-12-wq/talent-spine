@@ -134,7 +134,7 @@ const TrendingPackage = () => {
         </button>
 
         <Swiper
-          spaceBetween={0}
+          spaceBetween={10}
           slidesPerView={1}
           breakpoints={{
             660: {

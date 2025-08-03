@@ -67,10 +67,11 @@ const StartupPackage = () => {
             },
           }}
           modules={[Navigation]}
+          className="!pb-14 max-sm:!pb-10 !pt-5 !px-2"
         >
           {startupPackages.map((pkg) => (
-            <SwiperSlide key={pkg.id} className="flex justify-center">
-              <div className="bg-white rounded-2xl shadow-md border p-4 max-w-xs w-full flex flex-col items-center text-center">
+            <SwiperSlide key={pkg.id} className="flex justify-center w-full">
+              <div className="bg-white rounded-2xl flex justify-center shadow-md border p-4 max-w-xs w-full flex-col items-center text-center mx-auto">
                 <img
                   src={pkg.img}
                   alt={pkg.title}
@@ -87,6 +88,7 @@ const StartupPackage = () => {
                 </button>
               </div>
             </SwiperSlide>
+
           ))}
         </Swiper>
       </div>
