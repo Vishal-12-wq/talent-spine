@@ -20,6 +20,7 @@ const data = [
     img: "/assets/images/trending/trending1.png",
     reviewer: "James",
     review_text: "top rated",
+    bg_color : 'yellow'
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ const data = [
     img: "/assets/images/trending/trenidng2.png",
     reviewer: "James",
     review_text: "top rated",
+    bg_color : 'blue'
   },
   {
     id: 3,
@@ -47,6 +49,7 @@ const data = [
     img: "/assets/images/trending/trenidng3.png",
     reviewer: "James",
     review_text: "top rated",
+    bg_color : 'green'
   },
   {
     id: 4,
@@ -60,6 +63,7 @@ const data = [
     img: "/assets/images/trending/trending4.png",
     reviewer: "James",
     review_text: "top rated",
+    bg_color : 'yellow'
   },
   {
     id: 5,
@@ -73,6 +77,7 @@ const data = [
     img: "/assets/images/trending/trending4.png",
     reviewer: "James",
     review_text: "top rated",
+    bg_color : 'blue'
   },
   {
     id: 6,
@@ -86,6 +91,7 @@ const data = [
     img: "/assets/images/trending/trending4.png",
     reviewer: "James",
     review_text: "top rated",
+    bg_color : 'green'
   },
 ];
 
@@ -128,18 +134,18 @@ const TrendingPackage = () => {
         </button>
 
         <Swiper
-          spaceBetween={30}
+          spaceBetween={0}
           slidesPerView={1}
           breakpoints={{
             660: {
-              slidesPerView: 2,
+              slidesPerView: 1,
             },
            
             1024:{
-              slidesPerView:3
+              slidesPerView:2
             },
             1280: {
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
           }}
           onSwiper={setSwiperRef}
@@ -149,26 +155,36 @@ const TrendingPackage = () => {
           {data.length > 0 ? (
             data.map((ele) => (
               <SwiperSlide key={ele.id} className="flex justify-center mx-auto">
-                <div className="mx-auto xl:px-5 px-3 py-3 max-w-[338.8px] shrink-0 w-full rounded-2xl border-t-2 hover:border-t-primary border shadow-sm border-bordercolor overflow-hidden  hover:shadow-xl hover:brightness-90">
-                  
-                  <div className="relative">
-                    
-                    <div className="p-0">
-                      <img
-                        src={ele.img}
-                        alt={ele.name}
-                        className="h-full w-full object-top object-cover rounded-2xl"
-                      />
-                    </div>
+                <div className="mx-auto  transition-all duration-300 bg-white    max-w-[338.8px] shrink-0 w-full rounded-2xl border-t-2 hover:border-t-primary border shadow-sm border-bordercolor overflow-hidden  hover:shadow-xl hover:brightness-90">
+           
+
+                  <div className="relative h-[150px] w-full rounded-[10px] overflow-visible">
+  {/* Background image with blue overlay */}
+  <div
+    className="absolute h-[150px]  inset-0 bg-cover bg-center"
+    style={{ backgroundImage: `url(${ele.img})` }}
+  >
+    <div className="absolute inset-0  opacity-70"   style={{ backgroundColor: ele.bg_color }} // like ele.color = "#0076CE"
+/>
+  </div>
+
+  {/* Foreground image (pops out) */}
+  <div className="absolute inset-0 flex items-start justify-center mt-[100px] p-3">
+    <img
+      src={ele.img}
+      alt={ele.name}
+      className="h-[200px] w-full rounded-[10px] z-[1] -mt-24 object-cover  shadow-lg"
+    />
+  </div>
   
                     {/* Bookmark */}
-                    <div className="absolute top-3 right-3 border border-[#0076CE] bg-white p-1 rounded-[100px]">
+                    <div className="absolute z-[2] top-6 right-6 border border-[#0076CE] bg-white p-1 rounded-[100px]">
                       <img src="/assets/svg/heart/heart.svg" alt="bookmark" className="h-5 w-5" />
                     </div>
                   </div>
 
-                  <div>
-                    <div className="flex gap-1 items-center justify-between mt-3">
+<div className="mt-[80px] px-4">
+                    <div className="flex gap-1 items-center justify-between">
                       <h1 className="text-base xl-2:text-lg font-roboto font-bold text-primary uppercase tracking-wider">
                         {ele.name}
                       </h1>
@@ -217,11 +233,11 @@ const TrendingPackage = () => {
                         Message
                       </button>
                     </div>
-
-                  </div>
-                    <div className="font-medium text-[10px] mt-2 text-[#7348DE] rounded px-2 py-1 border border-l-[#7348DE] border-t-gray-300 border-r-gray-300 border-b-gray-300">
+                    <div className="font-medium text-[10px] mt-2 mb-2 text-[#7348DE] rounded px-2 py-1 border border-l-[#7348DE] border-t-gray-300 border-r-gray-300 border-b-gray-300">
                       Book a Custom Consultations
                     </div>
+                  </div>
+
                 </div>
               </SwiperSlide>
             ))

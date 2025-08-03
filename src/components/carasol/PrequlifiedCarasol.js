@@ -19,6 +19,7 @@ const data = [
     priceper_month: "1200",
     img: "https://audienceview.com/wp-content/uploads/sites/2/2023/09/smile-1490x875-1.webp?w=799",
     job_type: "Internship",
+    bg_color : 'yellow'
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ const data = [
     priceper_month: "1200",
     img: "https://fototyp.com/wp-content/uploads/2015/09/Untitled-2.jpg",
     job_type: "Full Time",
+    bg_color : 'blue'
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ const data = [
     priceper_month: "1200",
     img: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9hCKZ2g_fF8qNBfCEV_F0IMKM3gm77taJPus8BvViGJBrCzVb",
     job_type: "Part time",
+    bg_color : 'green'
   },
   {
     id: 4,
@@ -49,6 +52,7 @@ const data = [
     priceper_month: "1200",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJvSyx7BLqjJ9-VddqyLEe1d5s32nAqKnuqwRd1d6s1VXhnaEU",
     job_type: "Freelancer",
+    bg_color : 'yellow'
   },
   {
     id: 5,
@@ -59,6 +63,7 @@ const data = [
     priceper_month: "1200",
     img: "https://fototyp.com/wp-content/uploads/2015/09/Untitled-2.jpg",
     job_type: "Part time",
+    bg_color : 'blue'
   },
   {
     id: 6,
@@ -69,6 +74,7 @@ const data = [
     priceper_month: "1200",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJvSyx7BLqjJ9-VddqyLEe1d5s32nAqKnuqwRd1d6s1VXhnaEU",
     job_type: "Freelancer",
+    bg_color : 'green'
   },
 ];
 
@@ -118,52 +124,61 @@ const PrequlifiedCarasol = () => {
           />
         </button>
 
-        <Swiper
-          spaceBetween={30}
-          className="!pb-20 max-sm:!pb-10 !pt-5 !px-2"
-          slidesPerView={3}
-          breakpoints={{
-            660: {
-              slidesPerView: 1,
-            },
-           
-            1024:{
-              slidesPerView:2
-            },
-            1280: {
-              slidesPerView: 3,
-            },
-          }}
-        
-          onSwiper={setSwiperRef}
-          modules={[Pagination, Navigation, A11y]}
-        >
+          <Swiper
+            spaceBetween={30}
+            className="!pb-20 max-sm:!pb-10 !pt-5 !px-2"
+            slidesPerView={1} // 👈 default: phones show 1 slide
+            breakpoints={{
+              640: {
+                slidesPerView: 1,  // <=640px: 1 slide (redundant but explicit)
+              },
+              768: {
+                slidesPerView: 2,  // optional: tablets show 2 slides
+              },
+              1024: {
+                slidesPerView: 3,  // desktops show 3 slides
+              },
+            }}
+            onSwiper={setSwiperRef}
+            modules={[Pagination, Navigation, A11y]}
+          >
+
           {data.length > 0 ? (
             data.map((ele) => (
               <SwiperSlide key={ele.id} className="flex justify-center mx-auto w-100">
                 <div className="w-full max-w-100 rounded-2xl border border-[#E6ECF0] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden bg-white">
-                  <div className="relative">
-                    
-                    <div className="p-6">
-                      <img
-                        src={ele.img}
-                        alt={ele.name}
-                        className="h-[250px] w-full rounded-[10px] object-cover"
-                      />
-                    </div>
+                  <div className="relative h-[220px] w-full rounded-[10px] overflow-visible">
+  {/* Background image with blue overlay */}
+  <div
+    className="absolute h-[150px]  inset-0 bg-cover bg-center"
+    style={{ backgroundImage: `url(${ele.img})` }}
+  >
+    <div className="absolute inset-0  opacity-60"   style={{ backgroundColor: ele.bg_color }} // like ele.color = "#0076CE"
+/>
+  </div>
+
+  {/* Foreground image (pops out) */}
+  <div className="absolute inset-0 flex items-start justify-center mt-[100px] p-6">
+    <img
+      src={ele.img}
+      alt={ele.name}
+      className="h-[200px] w-full rounded-[10px] z-[1] -mt-24 object-cover border-4 border-white shadow-lg"
+    />
+  </div>
+
 
 
                     {/* Verified Badge */}
-                    <div className="absolute top-9 left-8 bg-[#0076CE] text-white text-[11px] px-2 py-1 rounded font-bold font-roboto tracking-wide">
+                    <div className="absolute z-[2] top-11 left-9 bg-[#0076CE] text-white text-[11px] px-2 py-1 rounded font-bold font-roboto tracking-wide">
                       VERIFIED
                     </div>
                     {/* Rating */}
-                    <div className="absolute top-9 left-[110px] bg-[#0076CE] text-white text-[11px] px-2 py-1 rounded font-bold font-roboto">
+                    <div className="absolute top-11 z-[1] left-[115px] bg-[#0076CE] text-white text-[11px] px-2 py-1 rounded font-bold font-roboto">
                       5 ★
                     </div>
                     
                     {/* Bookmark */}
-                    <div className="absolute top-9 right-8">
+                    <div className="absolute top-11 right-9 z-[1] border border-[#0076CE] bg-white p-1 rounded-[100px]">
                       <img src="/assets/svg/heart/heart.svg" alt="bookmark" className="h-5 w-5" />
                     </div>
                   </div>
@@ -270,6 +285,7 @@ const PrequlifiedCarasol = () => {
           />
         </button>
       </div>
+        
     </div>
   );
 };
