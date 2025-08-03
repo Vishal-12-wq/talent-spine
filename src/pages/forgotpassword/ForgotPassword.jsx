@@ -13,7 +13,7 @@ const ForgotPassword = () => {
   return (
     <div className="h-screen bg-[#f1f9f2] overflow-y-auto flex flex-col justify-between relative">
       <img
-        src="/assets/svg/login/PATHMOVER LOGO.svg"
+        src="/assets/svg/login/logo_main.png"
         alt="Logo"
         className="h-16 w-[250px] object-contain absolute top-5 left-5 z-[1000]"
       />

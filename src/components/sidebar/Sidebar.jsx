@@ -82,7 +82,7 @@ const Sidebar = () => {
         <div>
           <NavLink to="/">
             <img
-              src="/assets/svg/login/PATHMOVER LOGO.svg"
+              src="/assets/svg/login/logo_main.png"
               alt=""
               className="  pathmover-logo"
             />

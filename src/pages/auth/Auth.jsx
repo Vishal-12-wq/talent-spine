@@ -7,7 +7,7 @@ const Auth = () => {
     <div className="min-h-screen bg-[#f1f9f2] overflow-y-auto flex flex-col justify-between box-border relative">
       <NavLink to='/'>
         <img
-          src="/assets/svg/login/PATHMOVER LOGO.svg"
+          src="/assets/svg/login/logo_main.png"
           alt=""
           className="h-16 w-[250px] object-contain absolute max-sm:-translate-x-1/2 left-1/2 max-sm:transform top-5 sm:left-5 z-[1000]"
         />

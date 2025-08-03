@@ -28,7 +28,7 @@ const DashBoardHeader = () => {
       <div className="flex justify-between items-center gap-2">
         <NavLink to="/dashboard" className="lg:hidden">
           <img
-            src="/assets/svg/login/PATHMOVER LOGO.svg"
+            src="/assets/svg/login/logo_main.png"
             alt=""
             className="h-12 max-w-24 mx-auto object-contain"
           />

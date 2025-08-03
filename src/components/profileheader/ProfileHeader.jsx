@@ -8,7 +8,7 @@ const ProfileHeader = () => {
        
       <NavLink to="/">
       <img
-        src="/assets/svg/login/PATHMOVER LOGO.svg"
+        src="/assets/svg/login/logo_main.png"
         alt=""
         className=" sm:w-[130px] w-28 h-10"
       />

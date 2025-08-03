@@ -11,11 +11,11 @@ module.exports = {
         primaryp1: "#d7eafe",       
         secondary: "#212222",    
         secondarys1: "#757575",
-        customgreen:"#58AF47",
+        customgreen:"#0784E2",
         skygreen:"#EFF6F3",
         bordercolor:"#C4C4C4",
         footetext:"#757575",
-        success:"#58AF47"
+        success:"#0784E2"
       },
       fontFamily: {
         raleway: ['Raleway', 'sans-serif'],
