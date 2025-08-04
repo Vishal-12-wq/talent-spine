@@ -4,7 +4,7 @@ import bannerImage from "./backgroundimage/image.jpg"; // ✅ Correct path
 const TalentUniversityBanner = () => {
   return (
     <div
-  className="relative w-full bg-cover bg-center bg-no-repeat rounded-[20px] my-10 shadow-xl overflow-hidden mx-auto xl:px-20 xl-2:!px-0 max-w-[1600px] px-5 lg:px-10"
+  className="relative w-full bg-cover bg-center bg-no-repeat rounded-[20px] my-10 shadow-xl overflow-hidden mx-auto xl:px-20 xl-2:!px-0 max-w-[1600px] px-5 lg:px-20"
   style={{
     backgroundImage: `url(${bannerImage})`,
   }}

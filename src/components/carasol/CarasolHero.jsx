@@ -6,9 +6,9 @@ import Button from "../button/Button";
 import { motion } from "framer-motion";
 import AnimatedBoxes from "../shared/home-animation/Main";
 import "swiper/css";
-import "swiper/css/effect-fade"
+import "swiper/css/effect-fade";
 import { FaPlus } from "react-icons/fa6";
-import './style.css'
+import "./style.css";
 
 const swiperData = [
   {
@@ -21,11 +21,13 @@ const swiperData = [
     bluetext1: "Virtually",
     bluetext2: "Talent Spine",
     animation: true,
-    mainTitleJsx: <p className=" mt-[21px] xl:text-[32px]  xl-2:max-w-[551px] text-[28px] font-normal leading-[50px] font-daysOne">
-      <span className=" text-primary">Connecting</span> the Best <br />{" "}
-      Talent Worldwide with
-      <span className=" text-primary">Talent Spine</span>
-    </p>
+    mainTitleJsx: (
+      <p className=" mt-[21px] xl:text-[32px]  xl-2:max-w-[551px] text-[28px] font-normal leading-[50px] font-daysOne">
+        <span className=" text-primary">Connecting</span> the Best <br /> Talent
+        Worldwide with
+        <span className=" text-primary">Talent Spine</span>
+      </p>
+    ),
   },
   {
     id: 1,
@@ -109,19 +111,18 @@ const CarasolHero = () => {
     }, 700);
   };
 
-
   return (
     <div className="max-w-[1600px] mx-auto xl-2:px-0  px-3 lg:px-24 ">
       <div className=" max-lg:gap-5 xl-2:h-[100vh] xl-25:h-screen  overflow-y-hidden  relative overflow-x-hidden   max-lg:pt-14 h-full max-lg:py-5 flex max-xl-25:flex-col justify-center items-center gap-[14.5px]">
         <div className=" xl-25:max-w-[669.36px] xl-25:w-[40%] w-full  ">
           <div className="  inline-block ">
             <div
-              className={`mt-10 relative text-[18.7px] font-medium font-raleway px-[25.04px]  rounded-[10.2px] bg-primaryp1 text-center transition-all duration-300 py-[10.2px]`}>
-              <div key={currentImageIndex}  className="fade-up">
-                {swiperData[currentImageIndex]?.tag &&
-                  <div>
-                    {swiperData[currentImageIndex]?.tag || ""}
-                  </div>}
+              className={`mt-10 relative text-[18.7px] font-medium font-raleway px-[25.04px]  rounded-[10.2px] bg-primaryp1 text-center transition-all duration-300 py-[10.2px]`}
+            >
+              <div key={currentImageIndex} className="fade-up">
+                {swiperData[currentImageIndex]?.tag && (
+                  <div>{swiperData[currentImageIndex]?.tag || ""}</div>
+                )}
               </div>
               <motion.div
                 animate={{ x: trianglePosition.x, y: trianglePosition.y }}
@@ -143,34 +144,67 @@ const CarasolHero = () => {
 
           {/* Main title jsx */}
           <div className=" xl-2:mt-10 mt-7 flex items-center gap-6">
-            <input
-              type="text"
-              placeholder="Search Top Talent Direct from here..."
-              className=" text-base shadow-lg font-raleway text-secondary border max-w-[439px] w-full border-secondary px-10 xl-2:py-4 py-3  rounded-full"
-            />
-            <button className="xl-2:py-4 py-3 font-raleway shadow-lg  max-w-[114px] w-full rounded-full bg-primary text-white uppercase text-base font-bold">
-              Search
-            </button>
-          </div>
-          <div className=" xl-2:mt-10 mt-7 flex xl:gap-4 gap-2 flex-wrap">
-            <Button
-              bgcolor=" bg-primary"
-              text="Project Packages"
-              textcolor=" text-white"
-              bghover="hover:bg-secondary"
-            />
-            <Button
-              bgcolor=" bg-secondary"
-              text="FInd Talent"
-              textcolor=" text-white"
-              bghover="hover:bg-primary"
-            />
-            <Button
-              bgcolor=" bg-primary"
-              text="Find WOrk"
-              textcolor=" text-white"
-              bghover="hover:bg-secondary"
-            />
+            {/* ai based search */}
+              <div >
+                <h4 className="text-sm font-semibold mb-4 flex items-center gap-1">
+                  <img
+                    src="/assets/images/icons/tab.png"
+                    alt="Sparkle"
+                    className="w-5 h-5"
+                  />
+                  <span className="bg-gradient-to-r from-orange-500 to-pink-500 text-transparent bg-clip-text">
+                    AI Based Search
+                  </span>
+                </h4>
+                <div
+                  className="mx-auto w-full z-50 bg-white sm:p-6 p-4 border-t-2 custom-gradient-border-top rounded-[24px] shadow-xl"
+                  style={{ padding: "16px" }}
+                >
+                 {/* Tabs */}
+                  <div className="flex items-center justify-between border border-gray-300 p-1 rounded-xl mb-4 overflow-hidden">
+                    <button className="bg-[#007bff] text-white text-sm font-semibold px-4 py-2 rounded-lg">
+                      Find Talent
+                    </button>
+                    <button className="text-black text-sm font-semibold px-4 py-2 hover:bg-gray-100 rounded-lg">
+                      Project Packages
+                    </button>
+                    <button className="text-black text-sm font-semibold px-4 py-2 hover:bg-gray-100 rounded-lg">
+                      Find Work
+                    </button>
+                  </div>
+                  <div className="flex items-center gap-3">
+  <input
+    type="text"
+    placeholder="Search by role, skills and keywords"
+    className="flex-1 px-4 py-3 text-sm border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
+  />
+  <button
+    className="flex items-center gap-2 px-5 py-3 text-sm font-semibold text-white rounded-lg shadow-md border border-white"
+    style={{
+      background: 'linear-gradient(90deg, #007bff 0%, #0062cc 100%)',
+      boxShadow: '0 4px 6px rgba(0, 123, 255, 0.3)',
+    }}
+  >
+    <svg
+      className="w-4 h-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18a7.5 7.5 0 006.15-3.35z"
+      />
+    </svg>
+    SEARCH
+  </button>
+</div>
+                  
+                </div>
+              </div>
+            {/* closed here ai based */}
           </div>
           <div className=" xl-2:mt-10 mt-7 text-secondary xl-2:text-base text-xs font-normal font-roboto">
             Discover top professionals from every corner of the globe, ready to
@@ -232,7 +266,7 @@ const CarasolHero = () => {
             autoplay={{
               delay: 8000,
               disableOnInteraction: false,
-              waitForTransition: true
+              waitForTransition: true,
             }}
             modules={[Autoplay, EffectFade]}
             className="mySwiper home-hero-carasol !w-full h-full"
@@ -275,7 +309,6 @@ const CarasolHero = () => {
           </Swiper>
         </div>
         {/* This will show in swiper start*/}
-
       </div>
     </div>
   );

@@ -33,6 +33,7 @@ module.exports = {
       borderRadius:{
         "r30":"30px"
       }
+      
     },
   },
   plugins: [],

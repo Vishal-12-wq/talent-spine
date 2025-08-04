@@ -315,6 +315,42 @@ body {
   background-clip: text;
 }
 
+/* manual css */
+/* Reusable gradient top border */
+.card-gradient-top-border {
+  @apply relative rounded-xl shadow-md bg-white overflow-hidden;
+}
+
+.custom-gradient-border-top {
+  position: relative;
+  border-top: 2px solid transparent;
+  border-radius:24px;
+}
+
+.custom-gradient-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #FFA10B,
+    #FE7C2B,
+    #31BCFF,
+    #BE64FE,
+    #C561F4,
+    #EF5794,
+    #FE7C2B
+  );
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  z-index: 10;
+}
+
+
+
 /*  react date pickker tsratt */
 /* Add this to your CSS file (e.g., App.css) */
 .calendar-container {
@@ -402,3 +438,31 @@ body {
 
 
  /* for 1920 screen media queriees end */
+
+ .custom-gradient-border-top {
+  position: relative;
+  border-top: 2px solid transparent;
+  
+}
+
+.custom-gradient-border-top::before {
+  /* content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px; */
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #FFA10B,
+    #FE7C2B,
+    #31BCFF,
+    #BE64FE,
+    #C561F4,
+    #EF5794,
+    #FE7C2B
+  );
+  border-radius: 20px;
+
+  z-index: 10;
+}
